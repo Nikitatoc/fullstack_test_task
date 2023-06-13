@@ -588,22 +588,21 @@ console.log("test");
 
 
 form.addEventListener("submit", function(event) {
-  
+  // Отменяем стандартное поведение формы
   event.preventDefault();
 
-  
+  // Получаем данные из формы с помощью FormData
   let formData = new FormData(form);
 
-  
+  // Преобразуем данные из FormData в обычный объект
   let data = Object.fromEntries(formData);
 
-  
+  // Преобразуем объект в строку JSON
   let json = JSON.stringify(data);
 
-  
+  // Отправляем строку JSON на сервер с помощью fetch
   fetch("https://api.byteplex.info/api/test/contact/", {
     method: "POST",
-    
     headers: {
       "Content-Type": "application/json"
     },
