@@ -1,3 +1,4 @@
+consol.log("test");
 (function($) {
 
 	/**
@@ -614,5 +615,5 @@ fetch(request)
       console.error(error);
     });
 });
-alert("test");
+
 })(jQuery);
