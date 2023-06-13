@@ -603,6 +603,7 @@ form.addEventListener("submit", function(event) {
   // Отправляем строку JSON на сервер с помощью fetch
   fetch("https://api.byteplex.info/api/test/contact/", {
     method: "POST",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json"
     },
