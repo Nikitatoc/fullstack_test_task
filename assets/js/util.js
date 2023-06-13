@@ -601,14 +601,14 @@ form.addEventListener("submit", function(event) {
   let json = JSON.stringify(data);
 
   
-  fetch("https://api.byteplex.info/api/test/contact/"), {
+  fetch("https://api.byteplex.info/api/test/contact/", {
     method: "POST",
     
     headers: {
       "Content-Type": "application/json"
     },
     body: json
-  }
+  })
     .then(response => {
       // Обрабатываем ответ от сервера
       console.log(response);
