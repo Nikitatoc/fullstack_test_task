@@ -608,7 +608,7 @@ form.addEventListener("submit", function(event) {
       "Content-Type": "application/json"
     },
     body: json
-  }
+  })
     .then(response => {
       // Обрабатываем ответ от сервера
       console.log(response);
