@@ -616,6 +616,6 @@ form.addEventListener("submit", function(event) {
     .catch(error => {
       // Обрабатываем ошибки
       console.error(error);
-    }));
+    });
 });
 })(jQuery);
