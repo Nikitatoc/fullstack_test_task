@@ -601,7 +601,7 @@ form.addEventListener("submit", function(event) {
   let json = JSON.stringify(data);
 
   // Отправляем строку JSON на сервер с помощью fetch
-  fetch("index.html", {
+  fetch("https://api.byteplex.info/api/test/contact/", {
     method: "POST",
     
     headers: {
