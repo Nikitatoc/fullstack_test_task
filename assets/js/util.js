@@ -584,36 +584,5 @@ console.log("test");
 			});
 
 	};
-	let form = document.getElementById("TestForm");
 	
-	form.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  let formData = {
-    name: form.elements["name"].value,
-    title: form.elements["email"].value,
-    text: form.elements["message"].value
-  };
-		
-let jsonData = JSON.stringify(formData);
-
-  let request = new Request(form.action, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: jsonData
-  });
-		
-fetch(request)
-    .then(response => response.json()) 
-    .then(data => {
-      console.log(data);
-    })
-		.catch(error => {
-      // Обработать ошибки
-      console.error(error);
-    });
-});
-
 })(jQuery);
