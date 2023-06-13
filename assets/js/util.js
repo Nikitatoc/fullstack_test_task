@@ -1,4 +1,4 @@
-consol.log("test");
+console.log("test");
 (function($) {
 
 	/**
