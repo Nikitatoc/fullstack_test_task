@@ -584,34 +584,36 @@ console.log("test");
 			});
 
 	};
-	  let form = document.getElementById("TestForm");
-	
-	form.addEventListener("submit", function(event) {
+	let form = document.getElementById("TestForm");
+
+
+form.addEventListener("submit", function(event) {
+  
   event.preventDefault();
 
-  let formData = {
-    name: form.elements["name"].value,
-    title: form.elements["email"].value,
-    text: form.elements["message"].value
-  };
-		
-let jsonData = JSON.stringify(formData);
+  
+  let formData = new FormData(form);
 
-  let request = new Request(form.action, {
+  
+  let data = Object.fromEntries(formData);
+
+  
+  let json = JSON.stringify(data);
+
+  
+  fetch("https://api.byteplex.info/api/test/contact/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
-    body: jsonData
-  });
-		
-fetch(request)
-    .then(response => response.json()) 
-    .then(data => {
-      console.log(data);
+    body: json
+  })
+    .then(response => {
+      // Обрабатываем ответ от сервера
+      console.log(response);
     })
-		.catch(error => {
-      
+    .catch(error => {
+      // Обрабатываем ошибки
       console.error(error);
     });
 });
